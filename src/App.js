@@ -1,9 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+import QuizManager from './QuizManager/QuizManager';
 
 function App() {
   return (
-    <div></div>
+    <div>
+      <QuizManager />
+    </div>
   );
 }
 
