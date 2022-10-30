@@ -6,8 +6,8 @@ const Quiz = () => {
     return (
         <div>
             <div className="quiz-top">
-                <select></select>
-                <p>12/20</p>
+                <button>Reset</button>
+                <p className="quiz-p">12/20</p>
             </div>
             <div className="quiz-middle">
                 <Flashcard />

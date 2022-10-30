@@ -29,9 +29,13 @@ input {
   text-align: center;
 }
 
+input:focus {
+  outline: none;
+}
+
 button {
-  min-width: clamp(7em, 9em, 11em);
-  min-height: clamp(2em, 4em, 5em);
+  min-width: clamp(4.7em, 6.7em, 8.7em);
+  min-height: clamp(1em, 3em, 4em);
   border: none;
   border-radius: 1.9em;
   background-color: #e27d60;
@@ -44,5 +48,8 @@ button {
 button:hover {
   cursor: pointer;
   transition: all 0.6s ease;
+  min-width: clamp(4.9em, 6.9em, 8.9em);
+  min-height: clamp(1.1em, 3.1em, 4.1em);
   transform: translateY(-0.1em);
 }
+
