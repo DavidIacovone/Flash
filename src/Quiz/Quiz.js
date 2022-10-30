@@ -10,7 +10,6 @@ const Quiz = () => {
             </div>
             <div className="quiz-middle">
                 <Flashcard />
-                <input />
             </div>
             <div className="quiz-bottom">
                 <button>Check!</button>

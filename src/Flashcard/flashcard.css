@@ -1,0 +1,31 @@
+.flashcard-wrapper {
+    max-width: clamp(15em, 30em, 40em);
+    max-height: clamp(10em, 20em, 32em);
+    min-height: clamp(5em, 10em, 16em);
+    min-width: clamp(8em, 15em, 20em);
+    background-color: #41b3a3;
+    border: none;
+    border-radius: 0.8em;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    padding: 0.8em;
+    color: white;
+    font-size: 1.8rem;
+}
+
+.flashcard-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+    background-color: #e27d60;
+    border-radius: 0.6em;
+}
+
+.flashcard-middle {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.flashcard-bottom {
+    text-align: center;
+    margin-bottom: 2em;
+}
