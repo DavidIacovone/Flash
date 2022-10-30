@@ -1,5 +1,6 @@
 import React from "react";
 import Flashcard from "../Flashcard/Flashcard";
+import quiz from "./quiz.css"
 
 const Quiz = () => {
     return (
