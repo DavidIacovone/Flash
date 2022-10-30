@@ -1,7 +1,7 @@
 .quiz-top {
     display: flex;
     justify-content: space-between;
-    margin: 2em 2em 10em 2em;
+    margin: 2em 2em 12em 2em;
 }
 
 .quiz-middle,
@@ -15,4 +15,12 @@
     font-size: 2em;
     color: white;
     font-weight: 500;
+}
+
+@media only screen and (max-height: 900px) {
+    .quiz-top {
+        display: flex;
+        justify-content: space-between;
+        margin: 2em 2em 4em 2em;
+    }
 }
