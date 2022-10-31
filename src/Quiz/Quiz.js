@@ -4,7 +4,7 @@ import quiz from "./quiz.css"
 
 const Quiz = () => {
     return (
-        <div>
+        <div className="quiz">
             <div className="quiz-top">
                 <button>Reset</button>
                 <p className="quiz-p">12/20</p>

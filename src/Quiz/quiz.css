@@ -1,3 +1,7 @@
+.quiz {
+    width: 100%;
+}
+
 .quiz-top {
     display: flex;
     justify-content: space-between;
