@@ -1,4 +1,11 @@
 .list {
     min-height: 100vh;
+    min-width: 30em;
     background-color: #e8a87c;
+    text-align: center;
+}
+
+.list-p {
+    font-size: 3em;
+    color: white;
 }

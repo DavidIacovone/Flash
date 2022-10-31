@@ -48,7 +48,6 @@ button {
 button:hover {
   cursor: pointer;
   transition: all 0.6s ease;
-  min-width: clamp(4em, 6em, 8em);
   min-height: clamp(1.1em, 2.2em, 3.3em);
   transform: translateY(-0.1em);
 }

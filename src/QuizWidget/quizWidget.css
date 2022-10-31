@@ -1,3 +1,45 @@
-.quiz-widget {
+.widget-quiz {
+    min-width: clamp(4em, 5em, 6em);
+    min-height: clamp(12em, 14em, 17em);
+    margin: 2em;
     background-color: #41b3a3;
+    border-radius: 1.1em;
+    position: relative;
+    text-align: center;
+    padding: 0.2em;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.widget-button {
+    position: absolute;
+    bottom: 0.4em;
+    left: 1em;
+    right: 1em;
+}
+
+.widget-p {
+    position: absolute;
+    top: 0.25em;
+    left: 1em;
+    right: 1em;
+    font-size: 3em;
+    color: white;
+}
+
+.edit {
+    position: absolute;
+    top: 0.8em;
+    left: 1em;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.delete {
+    position: absolute;
+    top: 0.8em;
+    right: 1em;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
 }

@@ -5,7 +5,8 @@ import quizList from "./quizList.css"
 const QuizList = () => {
     return (
         <div className="list">
-            <p>ddddddddddddddddddddd</p>
+            <p className="list-p">Choose your quiz</p>
+            <QuizWidget />
             <QuizWidget />
         </div>
     )

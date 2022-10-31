@@ -1,9 +1,14 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPenToSquare} from "@fortawesome/free-solid-svg-icons";
+import { faTrashAlt } from "@fortawesome/free-regular-svg-icons";
 import quizWidget from "../QuizWidget/quizWidget.css";
 
 const QuizWidget = () => {
     return (
-        <div className="quiz-widget">
+        <div className="widget-quiz">
+            <FontAwesomeIcon className="edit" icon={faPenToSquare} />
+            <FontAwesomeIcon className="delete" icon={faTrashAlt} />
             <p className="widget-p">title</p>
             <button className="widget-button">Play</button>
         </div>
