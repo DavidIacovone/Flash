@@ -8,6 +8,7 @@ const QuizList = () => {
             <p className="list-p">Choose your quiz</p>
             <QuizWidget />
             <QuizWidget />
+            <button className="list-button">Add Quiz</button>
         </div>
     )
 }

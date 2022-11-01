@@ -3,9 +3,18 @@
     min-width: 30em;
     background-color: #e8a87c;
     text-align: center;
+    position: relative;
 }
 
 .list-p {
     font-size: 3em;
     color: white;
+}
+
+.list-button {
+    position: absolute;
+    bottom: 2em;
+    right: 0;
+    left: 0;
+    background-color: #41b3a3;
 }
