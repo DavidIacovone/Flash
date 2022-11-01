@@ -1,4 +1,5 @@
 import React from "react";
+import QuizPair from "../QuizPair/QuizPair";
 import quizCreator from "./quizCreator.css"
 
 const QuizCreator = () => {
@@ -10,7 +11,7 @@ const QuizCreator = () => {
             </div>
             <input className="quiz-creator-input" type="text" placeholder="Title.. " />
             <div className="quiz-creator-pairs">
-
+                <QuizPair />
             </div>
             <button>+</button>
         </div>
