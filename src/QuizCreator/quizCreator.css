@@ -5,6 +5,7 @@
     margin-right: auto;
     max-width: clamp(50em, 70em, 90em);
     min-width: clamp(20em, 30em, 40em);
+    padding: 0;
 }
 
 .quiz-creator-top {
@@ -53,4 +54,8 @@
     min-height: clamp(2em, 3em, 5em);
     text-align: left;
     padding: 0.2em 1em;
+}
+
+.quiz-creator-pair {
+    padding: 0;
 }
