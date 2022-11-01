@@ -17,7 +17,8 @@ p {
 
 button,
 input,
-select {
+select,
+h3 {
   margin: 0.3em 0.6em;
   padding: 0.3em;
 }
@@ -36,6 +37,7 @@ input:focus {
 button {
   min-width: clamp(3.7em, 5.7em, 7.7em);
   min-height: clamp(0.8em, 2em, 3em);
+  max-height: clamp(1em, 2.2em, 3.2em);
   border: none;
   border-radius: 1.9em;
   background-color: #e27d60;

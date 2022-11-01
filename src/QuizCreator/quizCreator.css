@@ -1,0 +1,28 @@
+.quiz-creator {
+    text-align: center;
+    margin-top: 8em;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: clamp(50em, 70em, 90em);
+    min-width: clamp(20em, 30em, 40em);
+}
+
+.quiz-creator-top {
+    display: flex;
+    min-height: clamp(5em, 8em, 10em);
+    justify-content: space-between;
+    text-align: center;
+    color: white;
+    margin-bottom: 2em;
+}
+
+.quiz-creator-h3 {
+    font-size: 2em;
+}
+
+.quiz-creator-input {
+    width: 90%;
+    min-height: clamp(2em, 3em, 5em);
+    text-align: left;
+    padding: 0.2em 1em;
+}
