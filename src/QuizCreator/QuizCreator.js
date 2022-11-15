@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import QuizPair from "../QuizPair/QuizPair";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,6 +6,21 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import quizCreator from "./quizCreator.css"
 
 const QuizCreator = () => {
+    const [pairs, setPairs] = useState([{
+        word: "",
+        translation: ""
+    }]);
+
+    const addPair = () => {
+        let pair = {
+            word: '',
+            translation: ''
+        }
+
+        setPairs([...pairs, pair]);
+    }
+
+
     return (
         <div className="quiz-creator">
             <Link to={"/"} ><FontAwesomeIcon className="quiz-creator-icon" icon={faArrowLeft} /></Link>
@@ -15,10 +30,13 @@ const QuizCreator = () => {
             </div>
             <input className="quiz-creator-input" type="text" placeholder="Title.. " />
             <div className="quiz-creator-pairs">
-                <QuizPair />
-                <QuizPair />
+                <form>
+                    {pairs.map( (pair, index) => {
+                        return <QuizPair key={index} props={pair} />
+                    })}
+                </form>
             </div>
-            <button>+</button>
+            <button onClick={addPair}>+</button>
         </div>
     )
 }
