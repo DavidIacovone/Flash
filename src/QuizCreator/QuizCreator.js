@@ -7,8 +7,8 @@ import quizCreator from "./quizCreator.css"
 
 const QuizCreator = () => {
     const [pairs, setPairs] = useState([{
-        word: "",
-        translation: ""
+        word: '',
+        translation: ''
     }]);
 
     const addPair = () => {
