@@ -3,16 +3,16 @@ import quizPair from "./quizPair.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-regular-svg-icons";
 
-const QuizPair = () => {
+const QuizPair = ({onFormChange, index, removePair}) => {
     return (
         <div className="quiz-pair">
             <div className="quiz-pair-top">
-                <p className="quiz-pair-p">1</p>
-                <FontAwesomeIcon icon={faTrashAlt} />
+                <p className="quiz-pair-p">{index + 1}</p>
+                <FontAwesomeIcon icon={faTrashAlt} onClick = {() => removePair(index)} />
             </div>
             <div className="quiz-pair-bottom">
-                <input type="text" placeholder="word" className="quiz-pair-input" />
-                <input type="text" placeholder="translation" className="quiz-pair-input" />
+                <input type="text" name="word" placeholder="word" onChange = {event => onFormChange(event, index)} className="quiz-pair-input" />
+                <input type="text" name="translation" placeholder="translation" onChange = {event => onFormChange(event, index)} className="quiz-pair-input" />
             </div>
         </div>
     )

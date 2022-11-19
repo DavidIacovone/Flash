@@ -7,17 +7,31 @@ import quizCreator from "./quizCreator.css"
 
 const QuizCreator = () => {
     const [pairs, setPairs] = useState([{
+        id: Math.random(),
         word: '',
         translation: ''
     }]);
 
     const addPair = () => {
         let pair = {
+            id: Math.random(),
             word: '',
             translation: ''
         }
 
         setPairs([...pairs, pair]);
+    }
+
+    const removePair = (index) => {
+        let data = [...pairs];
+        data.splice(index, 1)
+        setPairs(data)
+    }
+
+    const onFormChange = (event, index) => {
+        let data = [...pairs];
+        data[index][event.target.name] = event.target.value;
+        setPairs(data);
     }
 
 
@@ -32,7 +46,7 @@ const QuizCreator = () => {
             <div className="quiz-creator-pairs">
                 <form>
                     {pairs.map( (pair, index) => {
-                        return <QuizPair key={index} props={pair} />
+                        return <QuizPair key={pair.id} onFormChange = {onFormChange} removePair = {removePair} index = {index} />
                     })}
                 </form>
             </div>
