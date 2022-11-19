@@ -34,13 +34,18 @@ const QuizCreator = () => {
         setPairs(data);
     }
 
+    const submit = () => {
+        //placeholder
+        console.log(pairs);
+    }
+
 
     return (
         <div className="quiz-creator">
             <Link to={"/"} ><FontAwesomeIcon className="quiz-creator-icon" icon={faArrowLeft} /></Link>
             <div className="quiz-creator-top">
                 <h3 className="quiz-creator-h3">Create a new quiz</h3>
-                <button>Create</button>
+                <button onClick={submit} >Create</button>
             </div>
             <input className="quiz-creator-input" type="text" placeholder="Title.. " />
             <div className="quiz-creator-pairs">
