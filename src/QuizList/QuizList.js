@@ -21,9 +21,9 @@ const QuizList = () => {
         <div className="list">
             <p className="list-p">Choose your quiz</p>
             {quizzes.map(quiz => {
-                return <QuizWidget key={quiz.id} Title={quiz.Title} />
+                return <QuizWidget key={quiz.id} quiz={quiz} />
             })}
-            <Link to={"/create"} ><button className="list-button">Add Quiz</button></Link>
+            <Link to={"/create"} state={{ isUpdating: false }} ><button className="list-button">Add Quiz</button></Link>
         </div>
     )
 }
