@@ -1,21 +1,22 @@
 import { initializeApp } from "firebase/app";
+import { env } from "./env";
 import { getFirestore } from '@firebase/firestore';
-import * as dotenv from 'dotenv';
 
-dotenv.config();
 
 const firebaseConfig = {
-    apiKey: process.env.apiKey,
-    authDomain: process.env.authDomain,
-    databaseURL: process.env.databaseURL,
-    projectId: process.env.projectId,
-    storageBucket: process.env.storageBucket,
-    messagingSenderId: process.env.messagingSenderId,
-    appId: process.env.appId,
-    measurementId: process.env.measurementId
+    apiKey: env.apiKey,
+    authDomain: env.authDomain,
+    databaseURL: env.databaseURL,
+    projectId: env.projectId,
+    storageBucket: env.storageBucket,
+    messagingSenderId: env.messagingSenderId,
+    appId: env.appId,
+    measurementId: env.measurementId
   };
 
   const app = initializeApp(firebaseConfig);
 
   const db = getFirestore(app);
+
+export { db }
   
