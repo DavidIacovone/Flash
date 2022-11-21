@@ -1,19 +1,62 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Flashcard from "../Flashcard/Flashcard";
 import quiz from "./quiz.css"
 
 const Quiz = () => {
+    const [answer, setAnswer] = useState('');
+    const [index, setIndex] = useState(0);
+    const [quiz, setQuiz] = useState({ Flashcards: [{word: '', translation: '', id: 0}], Title: '', id: '' })
+    const [correctAnswers, setCorrectAnswers] = useState([]);
+
+    useEffect(() => {
+        if (localStorage.getItem("currentQuiz") !== null) {
+            setQuiz(JSON.parse(localStorage.getItem("currentQuiz")));
+            setIndex(Math.floor(Math.random() * quiz.Flashcards.length));
+        }
+    }, [])
+
+    const onAnswerChange = (event) => {
+        setAnswer(event.target.value);
+    }
+
+    const check = () => {
+        if(quiz.Flashcards[index].translation === answer) {
+            correctAnswers.push(quiz.Flashcards[index]);
+            setCorrectAnswers(correctAnswers);
+            if (quiz.Flashcards.length > 1){
+                quiz.Flashcards.splice(index, 1);
+                setQuiz(quiz);
+                setIndex(Math.floor(Math.random() * quiz.Flashcards.length));
+            }
+        }
+        else {
+            setIndex(Math.floor(Math.random() * quiz.Flashcards.length));
+        }
+    }
+
+
     return (
         <div className="quiz">
             <div className="quiz-top">
                 <button>Reset</button>
-                <p className="quiz-p">12/20</p>
+                <p className="quiz-p">{`${correctAnswers.length}/${correctAnswers.length + quiz.Flashcards.length}`}</p>
             </div>
             <div className="quiz-middle">
-                <Flashcard />
+                <div className="flashcard-wrapper">
+                    <div className="flashcard-top">
+                        <p>{quiz.Title}</p>
+                        <p>like</p>
+                    </div>
+                    <div className="flashcard-middle">
+                        <p>{quiz.Flashcards[index].word}</p>
+                    </div>
+                    <div className="flashcard-bottom">
+                        <input type="text" placeholder="Answer.. " value={answer} onChange={event => onAnswerChange(event)} />
+                    </div>
+                </div>
             </div>
             <div className="quiz-bottom">
-                <button>Check!</button>
+                <button onClick={check} >Check!</button>
             </div>
         </div>
     )
