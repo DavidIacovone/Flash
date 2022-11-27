@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { redirect } from "react-router-dom";
 import Flashcard from "../Flashcard/Flashcard";
 import quiz from "./quiz.css"
 
@@ -7,6 +8,7 @@ const Quiz = () => {
     const [index, setIndex] = useState(0);
     const [quiz, setQuiz] = useState({ Flashcards: [{word: '', translation: '', id: 0}], Title: '', id: '' })
     const [correctAnswers, setCorrectAnswers] = useState([]);
+    const [wrongAnswers, setWrongAnswers] = useState([]);
 
     useEffect(() => {
         if (localStorage.getItem("currentQuiz") !== null) {
@@ -19,17 +21,25 @@ const Quiz = () => {
         setAnswer(event.target.value);
     }
 
+    const onCorrectAnswer = () => {
+        quiz.Flashcards.splice(index, 1);
+        setQuiz(quiz);
+        setIndex(Math.floor(Math.random() * quiz.Flashcards.length));
+    }
+
     const check = () => {
         if(quiz.Flashcards[index].translation === answer) {
             correctAnswers.push(quiz.Flashcards[index]);
             setCorrectAnswers(correctAnswers);
             if (quiz.Flashcards.length > 1){
-                quiz.Flashcards.splice(index, 1);
-                setQuiz(quiz);
-                setIndex(Math.floor(Math.random() * quiz.Flashcards.length));
+                onCorrectAnswer();
+            } else {
+                window.location.href = window.location.href + 'results';
             }
         }
         else {
+            wrongAnswers.push(index);
+            setWrongAnswers(wrongAnswers);
             setIndex(Math.floor(Math.random() * quiz.Flashcards.length));
         }
     }
