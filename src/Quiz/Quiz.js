@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { redirect } from "react-router-dom";
 import Flashcard from "../Flashcard/Flashcard";
+import { mostFrequentElement } from "../utils/mostFrequentElement";
 import quiz from "./quiz.css"
 
 const Quiz = () => {
@@ -9,6 +10,7 @@ const Quiz = () => {
     const [quiz, setQuiz] = useState({ Flashcards: [{word: '', translation: '', id: 0}], Title: '', id: '' })
     const [correctAnswers, setCorrectAnswers] = useState([]);
     const [wrongAnswers, setWrongAnswers] = useState([]);
+    let problematicWord = "No word can challenge you.";
 
     useEffect(() => {
         if (localStorage.getItem("currentQuiz") !== null) {
@@ -21,19 +23,19 @@ const Quiz = () => {
         setAnswer(event.target.value);
     }
 
-    const onCorrectAnswer = () => {
-        quiz.Flashcards.splice(index, 1);
-        setQuiz(quiz);
-        setIndex(Math.floor(Math.random() * quiz.Flashcards.length));
-    }
-
     const check = () => {
         if(quiz.Flashcards[index].translation === answer) {
             correctAnswers.push(quiz.Flashcards[index]);
             setCorrectAnswers(correctAnswers);
             if (quiz.Flashcards.length > 1){
-                onCorrectAnswer();
+                quiz.Flashcards.splice(index, 1);
+                setQuiz(quiz);
+                setIndex(Math.floor(Math.random() * quiz.Flashcards.length));
             } else {
+                if (wrongAnswers.length > 0) {
+                    problematicWord = quiz.Flashcards[mostFrequentElement(wrongAnswers, wrongAnswers.length)];
+                }
+                sessionStorage.setItem("results", JSON.stringify(problematicWord));
                 window.location.href = window.location.href + 'results';
             }
         }

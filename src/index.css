@@ -4,6 +4,7 @@
   padding: 0;
   margin: 0;
   font-size: 1em;
+  color: white;
 }
 
 body {
@@ -28,6 +29,7 @@ input {
   border-radius: 0.4em;
   background-color: #85dcb8;
   text-align: center;
+  color: darkgrey;
 }
 
 input:focus {
