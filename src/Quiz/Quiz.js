@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { redirect } from "react-router-dom";
+import swal from "sweetalert";
 import Flashcard from "../Flashcard/Flashcard";
 import { mostFrequentElement } from "../utils/mostFrequentElement";
 import quiz from "./quiz.css"
@@ -42,6 +42,7 @@ const Quiz = () => {
         else {
             wrongAnswers.push(index);
             setWrongAnswers(wrongAnswers);
+            swal("Wrong answer", "Keep trying!", "error");
             setIndex(Math.floor(Math.random() * quiz.Flashcards.length));
         }
     }
